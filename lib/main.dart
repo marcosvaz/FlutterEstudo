@@ -1,14 +1,46 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(
   MaterialApp(
-    initialRoute: '/',
+    initialRoute: 'SplashScreen',
     routes: {
+      'SplashScreen': (context) => SplashScreen(),
       '/': (context) => Main(),
-      '/hora': (context) => Hora(),
+      // '/hora': (context) => Hora(),
     }
   ),
 );
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+      Duration(seconds: 3),
+      () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => Main())),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color(0xFF7B139A),
+        ),
+        child: Center(
+          child: Image.asset("./lib/assets/nu.png", scale: 2,),
+        ),
+      ),
+    );
+  }
+}
 
 // Route Main
 class Main extends StatelessWidget {
@@ -17,25 +49,15 @@ class Main extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.1, 0.5, 0.7, 0.9],
-            colors: [
-              Colors.indigo[800],
-              Colors.indigo[700],
-              Colors.indigo[600],
-              Colors.indigo[400],
-            ],
-          ),
+          color: Color(0xFF7B139A),
         ),
         child: Center(
           child: Text(
-            'Olá mundo!',
+            "Olá Mundo!",
             style: TextStyle(
               fontSize: 32,
-              color: Color(0xFFFFFFFF)
-            ),  
+              color: Color(0xFFFFFFFF),
+            ),
           ),
         ),
       ),
@@ -44,20 +66,20 @@ class Main extends StatelessWidget {
 }
 
 // Route Hora
-class Hora extends StatelessWidget {
-  final horaatual = new DateTime.now();
+// class Hora extends StatelessWidget {
+//   final horaatual = new DateTime.now();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Voltar'),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: RaisedButton(
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//           child: Text('Voltar'),
+//         ),
+//       ),
+//     );
+//   }
+// }

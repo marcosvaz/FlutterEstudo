@@ -52,11 +52,20 @@ class Main extends StatelessWidget {
           color: Color(0xFF7B139A),
         ),
         child: Center(
-          child: Text(
-            "Olá Mundo!",
-            style: TextStyle(
-              fontSize: 32,
-              color: Color(0xFFFFFFFF),
+          child: Container(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset("./lib/assets/nu.png", scale: 3),
+                Text(
+                  'Marcos Vaz',
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
             ),
           ),
         ),

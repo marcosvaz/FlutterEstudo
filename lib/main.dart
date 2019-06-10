@@ -51,44 +51,35 @@ class Main extends StatelessWidget {
         decoration: BoxDecoration(
           color: Color(0xFF7B139A),
         ),
-        child: Center(
-          child: Container(
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Image.asset("./lib/assets/nu.png", scale: 3),
-                Text(
-                  'Marcos Vaz',
-                  style: TextStyle(
-                    color: Color(0xFFFFFFFF),
-                    fontFamily: "Roboto",
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        child: Top(),
       ),
     );
   }
 }
 
-// Route Hora
-// class Hora extends StatelessWidget {
-//   final horaatual = new DateTime.now();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: RaisedButton(
-//           onPressed: () {
-//             Navigator.pop(context);
-//           },
-//           child: Text('Voltar'),
-//         ),
-//       ),
-//     );
-//   }
-// }
+class Top extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 90, top: 65),
+            child: Image.asset("./lib/assets/nu.png", scale: 3.8),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 10, top: 62),
+            child: Text(
+              "Marcos Vaz",
+              style: TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )
+            )
+          ),
+        ],
+      )
+    );
+  }
+}

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(
   MaterialApp(
+    theme: ThemeData(fontFamily: "Graphik"),
     initialRoute: 'SplashScreen',
     routes: {
       'SplashScreen': (context) => SplashScreen(),
@@ -86,7 +87,7 @@ class Top extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFFFFFFFF),
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold
               ),
             ),
           ),
@@ -148,7 +149,7 @@ class Card extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 30),
-                child: Text("R\$ 0,00", style: TextStyle(color: Colors.black, fontSize: 30)),
+                child: Text("R\$ 1.000.000,00", style: TextStyle(color: Colors.black, fontSize: 30)),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 90),
@@ -157,8 +158,8 @@ class Card extends StatelessWidget {
                     color: Colors.grey[100],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 50, top: 30, bottom: 90),
-                    child: Text("Dinheiro guardado no valor \nde R\$ 150,00 sexta"),
+                    padding: EdgeInsets.only(left: 50, top: 30, bottom: 27),
+                    child: Text("Dinheiro guardado no valor \nde R\$ 150.000,00 sexta"),
                   ),
                 ),
               ),
